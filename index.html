@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ore Standard Converter</title>
+    <style>
+        body {
+            background-color: #fdfd96; /* Pastel yellow */
+            color: black;
+            font-family: monospace;
+        }
+        button, select, input[type=number] {
+            font-family: monospace;
+        }
+    </style>
+    <script>
+        function convertCurrency() {
+            // Define conversion rates for both options, including Netherrack (R)
+            const rates = {
+                "Overworld Gold Only": {
+                    N: 0.425,
+                    D: 3.7,
+                    G: 4.5,
+                    I: 77,
+                    E: 0.2,
+                    C: 142,
+                    S: 13107.2,
+                    R: 22938 // Netherrack rate added
+                },
+                "Normal Gold": {
+                    N: 0.425,
+                    D: 3.7,
+                    G: 12.25,
+                    I: 77,
+                    E: 0.2,
+                    C: 142,
+                    S: 13107.2,
+                    R: 22938 // Netherrack rate added
+                }
+            };
+
+            // Get user input
+            let option = document.getElementById("rateOption").value;
+            let amount = parseFloat(document.getElementById("amount").value);
+            let fromCurrency = document.getElementById("fromCurrency").value;
+            let toCurrency = document.getElementById("toCurrency").value;
+
+            // Calculate conversion
+            let result = 0;
+            if (rates[option] && rates[option][fromCurrency] && rates[option][toCurrency]) {
+                result = (amount / rates[option][fromCurrency]) * rates[option][toCurrency];
+            }
+
+            // Display the result
+            document.getElementById("result").innerText = `Result: ${result.toFixed(2)} ${toCurrency}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Standard Ore Conversion Calculator</h2>
+    <div>
+        <select id="rateOption">
+            <option value="Overworld Gold Only">Overworld Gold Only</option>
+            <option value="Normal Gold">Normal Gold</option>
+        </select>
+        <br><br>
+        <input type="number" id="amount" placeholder="Amount" />
+        <select id="fromCurrency">
+            <option value="N">Netherite</option>
+            <option value="D">Diamond</option>
+            <option value="G">Gold</option>
+            <option value="I">Iron</option>
+            <option value="E">Emerald</option>
+            <option value="C">Coal</option>
+            <option value="S">Stone</option>
+            <option value="R">Netherrack</option> <!-- Netherrack option added -->
+        </select>
+        to
+        <select id="toCurrency">
+            <option value="N">Netherite</option>
+            <option value="D">Diamond</option>
+            <option value="G">Gold</option>
+            <option value="I">Iron</option>
+            <option value="E">Emerald</option>
+            <option value="C">Coal</option>
+            <option value="S">Stone</option>
+            <option value="R">Netherrack</option> <!-- Netherrack option added -->
+        </select>
+        <button onclick="convertCurrency()">Convert</button>
+    </div>
+    <div id="result"></div>
+    <p>This program uses the most up-to-date data on ore rates per chunk.</p>
+    <h3>Currency Key</h3>
+    <p>
+N = Netherite<br>
+D = Diamonds<br>
+G = Gold<br>
+I = Iron<br>
+E = Emeralds<br>
+C = Coal<br>
+S = Stone<br>
+R = Netherrack<br>
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <h3>Data:</h3>
+    <h4>Conversion Rates</h4>
+    <p>Per chunk in the overworld, there is approximately:<br>
+3.7 Diamonds<br>
+4.5 Gold<br>
+77 Iron<br>
+0.2 Emeralds<br>
+142 Coal<br>
+13107.2 Stone<br>
+<br>
+Per chunk in both biomes, there is approximately:<br>
+3.7 Diamonds<br>
+12.25 Gold<br>
+77 Iron<br>
+0.2 Emeralds<br>
+142 Coal<br>
+13107.2 Stone<br>
+22938 Netherrack<br>
+(1.7 Ancient Debris)<br>
+0.425 Netherite (Using the Ancient Debris and Gold rates and calculating based on crafting recipe)<br>
+    </p>
+</body>
+</html>
